@@ -1,0 +1,214 @@
+img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    top: 25px;
+}
+
+body {
+    background-color: white;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 25px;
+    margin-left: 75px;
+}
+
+p.green {
+    color: #028802;
+}
+
+p.red {
+    color: #CC0000;
+}
+
+textarea {
+    display: inline-block;
+    vertical-align: top;
+    width: 60%;
+    min-height: 300px;
+    max-height: 500px;
+    padding: 8px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    font-size: 30px;
+    outline: none;
+    line-height: 1.6;
+    resize: none;
+}
+
+label {
+    display: block;
+    position: relative;
+    padding-left: 1em;
+}
+
+label input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+footer,
+main,
+nav,
+aside {
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+header {
+    background-color: gray;
+}
+
+main {
+    background-color: white;
+}
+
+.grid_container {
+    display: grid;
+    /* グリッドコンテナであることを定義 */
+    grid-template-areas: 'header'/* 1行目 */
+    'nav'/* 2行目 */
+    'main'/* 3行目 */
+    'aside'/* 4行目 */
+    'footer'/* 5行目 */
+    ;
+    grid-template-rows: 60px 50px 1fr auto 60px;
+    /* 行の高さ */
+    grid-template-columns: 1fr;
+    /* 列の幅 */
+    grid-row-gap: 0;
+    /*行と行の間の余白 */
+}
+
+.grid_header {
+    grid-area: header;
+}
+
+.grid_footer {
+    grid-area: footer;
+}
+
+.grid_main {
+    grid-area: main;
+    padding: 0.5em 1em;
+    margin: 2em 10px;
+    font-weight: bold;
+    border: solid 2px black;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+}
+
+.grid_nav {
+    grid-area: nav;
+}
+
+.grid_aside {
+    grid-area: aside;
+    padding: 0.5em 1em;
+    margin: 2em 10px;
+    font-weight: bold;
+    border: solid 2px black;
+    /*線*/
+    border-radius: 10px;
+    /*角の丸み*/
+
+}
+
+
+/* デバイス幅が600px以上の時 */
+
+@media screen and (min-width: 600px) {
+    .grid_container {
+        grid-template-areas: 'header header header'/* 1行目 */
+        'nav main aside'/* 2行目 */
+        'footer footer footer';
+        /* 3行目 */
+        grid-template-rows: 60px 2fr 100px;
+        /* 行の高さ */
+        grid-template-columns: 1fr 4fr 1fr;
+        /* 列の幅 */
+        grid-row-gap: 10px;
+        /* 行と行の間の余白 */
+        grid-column-gap: 10px;
+        /* 列と列の間の余白 */
+        /* ショートハンドだと
+        grid-gap: 10px 10px;
+        */
+        height: 100vh;
+        /* フッタの位置を最下部に */
+    }
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    margin-top: -10px;
+    color: white;
+}
+
+.main {
+    margin-left: 75px;
+}
+
+:disabled {
+    background-color: white;
+    color: black;
+}
+
+.project {
+    text-align: center;
+    width: 300px;
+    font-size: 30px;
+}
+
+.grid_index {
+    grid-area: main;
+    text-align: center;
+}
+
+.logout {
+    text-align: right;
+    margin-top: 5px;
+}
+
+.b1 {
+    margin-left: -20px;
+    margin-right: 50px;
+}
+
+.password {
+    margin-left: 32px;
+    text-align: center;
+}
+
+.grid_form {
+    grid-area: main;
+    text-align: center;
+}
+
+textarea {
+    font-size: 15px;
+    border: solid 2px;
+    font-size: 18px;
+}
+
+.font1 {
+    font-size: 20px;
+}

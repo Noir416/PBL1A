@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>プロフィール編集画面</title>
+    <link rel="stylesheet" type="text/css" href="./css/sns.css">
+</head>
+
+<body>
+    <div class="grid_container">
+        <header class="grid_header">
+            <div class="title">プロフィール確認画面
+            </div>
+
+        </header>
+        <main class="grid_main">
+            <b>
+                <img src="./img/icon_smile_b.png"> &nbsp;&nbsp;アカウント名：
+                <input type="text" name="name" size="40" maxlength="20" value="神戸　電子" readonly>
+            </b>
+            <p></p>
+            <br>
+            <hr>
+            <br>
+            <div class="main">
+                <b>アプリ開発</b><br>
+                <form>
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Java&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Ruby&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Swift
+                </form>
+                <p></p>
+                <b>Web開発</b><br>
+                <a>フロントエンド</a><br>
+                <form>
+                    <input type="checkbox" name="cource" value="#" checked="checked" onclick="return false;">HTML&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" checked="checked" onclick="return false;">CSS&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" checked="checked" onclick="return false;">JavaScript&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">GO&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Kotlin&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Git&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Ruby&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">PHP
+                </form>
+                <p></p>
+                <a>バックエンド</a><br>
+                <form>
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Python&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">JavaScript&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">GO&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Kotlin&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Git&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Ruby&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" checked="checked" onclick="return false;">PHP
+                </form>
+                <p></p>
+                <b>組み込み開発</b><br>
+                <form>
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">C言語&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Fortran&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">C++&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">C#&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">DB
+                </form>
+                <p></p>
+                <b>サーバー開発</b><br>
+                <form>
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Linux&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">CentOS&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">Ubuntu&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">AWS
+                </form>
+
+                <p>
+                    <b>自由記入欄</b><br>
+                    <textarea name="free" placeholder="他になにかあれば記入してください。"></textarea><br>
+                </p>
+
+                <p>
+                    <a href="./prof.html">
+                        <input type="submit" value="変更">
+                    </a>
+                </p>
+            </div>
+        </main>
+
+    </div>
+</body>
+
+</html>

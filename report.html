@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/sns.css" />
+    <title>report.html</title>
+  </head>
+
+  <body>
+    <div class="grid_container">
+      <header class="grid_header">
+        <div class="title">プロジェクト報告
+        </div>
+      </header>
+
+      <main class="grid_main">
+          <div class="lists_wrap">
+            <div style="display: flex;justify-content: space-between;">
+                  <b>やるべきこと</b>
+                  <div>
+                      <b>最終更新日時　2021/04/27/11:50:05</b>
+                      <button type="button" onclick="location.href='report_create.html'">編集</button>
+                  </div>
+            </div>
+            <ul class="list" id="list1">
+                <li>タスク1</li>
+                <li>タスク2</li>
+                <li>タスク3</li>
+                <li>タスク4</li>
+                <li>タスク5</li>
+            </ul>
+            <p>今やっているところ</p>
+            <ul class="list" id="list2">
+                <li>タスク6</li>
+                <li>タスク7</li>
+                <li>タスク8</li>
+                <li>タスク9</li>
+                <li>タスク10</li>
+            </ul>
+            <p>出来たところ</p>
+            <ul class="list" id="list3">
+                <li>タスク11</li>
+                <li>タスク12</li>
+                <li>タスク13</li>
+                <li>タスク14</li>
+                <li>タスク15</li>
+            </ul>
+          </div>
+          <hr>
+          <div>
+              <p>コメント</p>
+              <div style="margin-bottom: 20px; font-size: 13px; display: flex">  
+                <b>学生その１：</b>
+                <input type="text" style="width: 80%; border: none; border-bottom: 1px solid #000000;" placeholder='感想や意見があればコメントお願いします'>
+                </div>
+                <div style="margin-left: 5%; font-size: 13px; font-weight: 100;">
+                    <div>教師その１：〜〜〜〜〜〜〜〜〜〜〜〜</div><br>
+                    <div>学生その２：〜〜〜〜〜〜〜〜〜〜〜〜</div><br>
+                    <div>教師その１：〜〜〜〜〜〜〜〜〜〜〜〜</div><br>
+                    <div>学生その２：〜〜〜〜〜〜〜〜〜〜〜〜</div><br>
+                    <div>教師その１：〜〜〜〜〜〜〜〜〜〜〜〜</div><br>
+                </div>
+                <br>
+                
+            </div>
+          </div>
+          <br>
+      </main>
+    </div>
+  </body>
+</html>
+<style>
+  input{
+    outline: 0;
+  }
+  .list {
+    padding: 10px;
+  }
+  .list li {
+    margin: 1px;
+    padding: 5px 10px;
+    width: 70%;
+    font-weight: 100; 
+    border: 1px solid #0c5460;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  .list li:hover {
+    cursor: move;
+  }
+  .lists_wrap {
+    width: 100%;
+  }
+  #list1 li {
+    background-color: #a2c2e6;
+  }
+  #list2 li {
+    background-color: #f3981d;
+  }
+  #list3 li {
+    background-color: #a4d5bd;
+  }
+  #list1 li input {
+    width: 100%;
+    background-color: #a2c2e6;
+    border: 0;
+    font-size: 16px;
+  }
+  #list2 li input {
+    width: 100%;
+    background-color: #f3981d;
+    border: 0;
+    font-size: 16px;
+  }
+  #list3 li input {
+    width: 100%;
+    background-color: #a4d5bd;
+    border: 0;
+    font-size: 16px;
+  }
+
+  .sortable-chosen input {
+    background-color: #ec2b2b !important;
+    color: #fff;
+  }
+  .sortable-chosen {
+    background-color: #ec2b2b !important;
+    color: #fff;
+  }
+</style>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>プロフィール編集画面</title>
+    <link rel="stylesheet" type="text/css" href="./css/sns.css">
+</head>
+
+<body>
+    <div class="grid_container">
+        <header class="grid_header">
+            <div class="title">プロフィール編集画面
+            </div>
+
+        </header>
+
+        <main class="grid_main">
+            <b>
+                    <img src="./img/13.png"> &nbsp;&nbsp;アカウント名：
+                    <input type="text" name="name" size="40" maxlength="20" placeholder="アカウント名を記入してください。">
+                </b>
+            <p></p>
+            <br>
+            <hr>
+            <br>
+            <div class="main">
+                <p>※自分が出来るスキルを選択してください（複数選択可）</p>
+                <b>アプリ開発</b><br>
+                <form>
+                    <input type="checkbox" name="cource" value="#">Java&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">Ruby&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">Swift
+                </form>
+                <p></p>
+                <b>Web開発</b><br>
+                <a>フロントエンド</a><br>
+                <form>
+                    <input type="checkbox" name="cource" value="#">HTML&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">CSS&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">JavaScript&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">GO&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">Kotlin&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">Git&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">Ruby&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">PHP
+                </form>
+                <p></p>
+                <a>バックエンド</a><br>
+                <form>
+                    <input type="checkbox" name="cource" value="#">Python&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">JavaScript&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">GO&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">Kotlin&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">Git&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">Ruby&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">PHP
+                </form>
+                <p></p>
+                <b>組み込み開発</b><br>
+                <form>
+                    <input type="checkbox" name="cource" value="#">C言語&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">Fortran&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">C++&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">C#&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">DB
+                </form>
+                <p></p>
+                <b>サーバー開発</b><br>
+                <form>
+                    <input type="checkbox" name="cource" value="#">Linux&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">CentOS&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">Ubuntu&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">AWS
+                </form>
+
+                <p>
+                    <b>自由記入欄</b><br>
+                    <textarea name="free" placeholder="他になにかあれば記入してください。"></textarea><br>
+                </p>
+                <p>
+                    <form>
+                        <input type="submit" value="変更">
+                    </form>
+                </p>
+            </div>
+        </main>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,281 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JavaScript サンプル: ドラッグで並び替え可能なリスト項目</title>
+    <style>
+      /* 例示用のスタイル */
+      html {
+        font-size: 62.5%;
+      }
+      body {
+        box-sizing: border-box;
+        max-width: 980px;
+        margin: auto;
+        padding: 15px;
+        font-size: 1.4rem;
+        font-family: sans-serif;
+      }
+
+      /** ドラッグリスト */
+      .drag-list {
+        padding: 0 0 60px;
+      }
+      .drag-item {
+        position: relative;
+        display: block;
+        margin: 15px 0;
+        padding: 15px 45px 15px 15px;
+        border: 1px solid #d0d0d0;
+        background: white;
+        cursor: move;
+        user-select: none;
+      }
+      .drag-item::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 15px;
+        bottom: 0;
+        display: block;
+        width: 15px;
+        height: 10px;
+        margin: auto;
+        background: linear-gradient(
+          to bottom,
+          #ccc 20%,
+          white 20%,
+          white 40%,
+          #ccc 40%,
+          #ccc 60%,
+          white 60%,
+          white 80%,
+          #ccc 80%
+        );
+      }
+      .drag-item.dragging {
+        opacity: 0.5;
+      }
+      .drag-item.drag-over::before {
+        content: "";
+        position: absolute;
+        top: -9px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: hsl(350, 100%, 80%);
+      }
+      .drag-item.dummy {
+        border: none;
+        cursor: default;
+      }
+      .drag-item.dummy::after {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript サンプル: ドラッグで並び替え可能なリスト項目</h1>
+    <p>
+      HTML5 のドラッグ＆ドロップ API
+      を使用して項目をドラッグして入れ替えができるようにします。
+    </p>
+    <ul>
+      <li>最下部のドラッグ用にダミー項目を追加しています。</li>
+      <li>
+        サーバー側で順序情報を取得できるように &lt;input type="hidden"&gt;
+        に順序を設定する処理も追加しています。
+      </li>
+    </ul>
+
+    <ul class="drag-list" draggable="true">
+      <li class="drag-item" draggable="true">
+        <input type="hidden" name="item[0][id]" class="item-id" value="1" />
+        <input
+          type="hidden"
+          name="item[0][order]"
+          class="item-order"
+          value="1"
+        />
+        項目 1
+      </li>
+      <li class="drag-item" draggable="true">
+        <input type="hidden" name="item[1][id]" class="item-id" value="2" />
+        <input
+          type="hidden"
+          name="item[1][order]"
+          class="item-order"
+          value="3"
+        />
+        項目 2
+      </li>
+      <li class="drag-item" draggable="true">
+        <input type="hidden" name="item[2][id]" class="item-id" value="3" />
+        <input
+          type="hidden"
+          name="item[2][order]"
+          class="item-order"
+          value="2"
+        />
+        項目 3
+      </li>
+      <li class="drag-item" draggable="true">
+        <input type="hidden" name="item[3][id]" class="item-id" value="4" />
+        <input
+          type="hidden"
+          name="item[3][order]"
+          class="item-order"
+          value="4"
+        />
+        項目 4
+      </li>
+      <li class="drag-item" draggable="true">
+        <input type="hidden" name="item[4][id]" class="item-id" value="5" />
+        <input
+          type="hidden"
+          name="item[4][order]"
+          class="item-order"
+          value="5"
+        />
+        項目 5
+      </li>
+      <li class="drag-item dummy"></li>
+    </ul>
+
+    <h2>&lt;input type="hidden"&gt; のダンプ</h2>
+    <div id="dump">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>順序</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>4</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      (function () {
+        if (!Element.prototype.matches)
+          Element.prototype.matches = Element.prototype.msMatchesSelector;
+
+        let dragging = false;
+        // 【ドラッグする側】ドラッグ開始
+        document.addEventListener("dragstart", function (e) {
+          console.log("dragstart", e);
+          if (e.target.matches(".drag-item:not(.dummy)")) {
+            e.dataTransfer.effectAllowed = "move"; // 移動のみ許可
+            e.target.classList.add("dragging");
+            dragging = true;
+          }
+        });
+        // 【ドラッグする側】ドラッグが終了した
+        document.addEventListener("dragend", function (e) {
+          console.log("dragend", e);
+          if (e.target.matches(".drag-item:not(.dummy)")) {
+            e.target.classList.remove("dragging");
+            dragging = false;
+          }
+        });
+
+        // 【ドラッグされた側】ドラッグされた要素が入ってきている
+        document.addEventListener("dragenter", function (e) {
+          console.log("dragenter", e);
+          if (dragging && e.target.matches(".drag-item")) {
+            e.preventDefault();
+            e.target.classList.add("drag-over");
+          }
+        });
+        // 【ドラッグされた側】ドラッグされた要素が乗っている
+        document.addEventListener("dragover", function (e) {
+          console.log("dragover", e, dragging);
+          if (dragging && e.target.matches(".drag-item")) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = "move";
+          }
+        });
+        // 【ドラッグされた側】ドラッグされた要素が離れた
+        document.addEventListener("dragleave", function (e) {
+          console.log("dragleave", e);
+          if (dragging && e.target.matches(".drag-item")) {
+            e.target.classList.remove("drag-over");
+          }
+        });
+        // 【ドラッグされた側】ドロップされた
+        document.addEventListener("drop", function (e) {
+          console.log("drop", e);
+          if (dragging && e.target.matches(".drag-item")) {
+            // ドラッグ中要素を取得・再配置
+            const draggingItem = e.target.parentNode.querySelector(".dragging");
+            const refItem = e.target.matches(".dummy")
+              ? e.target.previousSibling
+              : e.target; // ダミーより後ろには置かない
+            e.target.parentNode.insertBefore(draggingItem, refItem);
+            e.target.classList.remove("drag-over");
+
+            // 順序情報の更新
+            Array.prototype.forEach.call(
+              e.target.parentNode.querySelectorAll(
+                "input[type=hidden].item-order"
+              ),
+              function (el, i) {
+                el.value = i + 1;
+              }
+            );
+
+            dump(); // hidden のダンプ
+          }
+        });
+
+        // hidden のダンプ
+        const dump = function () {
+          const dump = document.getElementById("dump");
+          dump.innerHTML =
+            "<table><thead><tr><th>ID</th><th>順序</th></tr></thead><tbody></tbody></table>";
+          const tbody = dump.querySelector("tbody");
+          Array.prototype.forEach.call(
+            document.querySelectorAll(".drag-item:not(.dummy)"),
+            function (el, i) {
+              const tr = document.createElement("tr");
+              const td1 = document.createElement("td");
+              td1.textContent = el.querySelector(
+                "input[type=hidden].item-id"
+              ).value;
+              const td2 = document.createElement("td");
+              td2.textContent = el.querySelector(
+                "input[type=hidden].item-order"
+              ).value;
+
+              tr.appendChild(td1);
+              tr.appendChild(td2);
+              tbody.appendChild(tr);
+            }
+          );
+        };
+      })();
+    </script>
+  </body>
+</html>
