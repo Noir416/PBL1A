@@ -11,17 +11,25 @@
 
 <body>
     <div class="grid_container">
-        <header class="grid_header">
+        <header class="grid_header" style="display: flex;justify-content: space-between;">
+            <table>
+                <td><button type="button" onclick="location.href='index.html'" style="padding: 7px;">KDKSS</button></td>
+                <td><button type="button" onclick="location.href='chat_rireki.html'" style="padding: 5.5px;">チャット履歴</button></td>
+            </table>
+
             <div class="title">プロフィール編集画面
             </div>
 
+            <div class="logout">
+                <button type="button" onclick="location.href='login.html'" style="padding: 5.5px;">ログアウト</button>
+            </div>
         </header>
 
         <main class="grid_main">
             <b>
-                    <img src="./img/13.png"> &nbsp;&nbsp;アカウント名：
-                    <input type="text" name="name" size="40" maxlength="20" placeholder="アカウント名を記入してください。">
-                </b>
+                <img src="./img/13.png"> &nbsp;&nbsp;アカウント名：
+                <input type="text" name="name" size="40" maxlength="20" value="神戸 電子" placeholder="アカウント名を記入してください。">
+            </b>
             <p></p>
             <br>
             <hr>
@@ -38,9 +46,9 @@
                 <b>Web開発</b><br>
                 <a>フロントエンド</a><br>
                 <form>
-                    <input type="checkbox" name="cource" value="#">HTML&nbsp;&nbsp;
-                    <input type="checkbox" name="cource" value="#">CSS&nbsp;&nbsp;
-                    <input type="checkbox" name="cource" value="#">JavaScript&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" checked="checked">HTML&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" checked="checked">CSS&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" checked="checked">JavaScript&nbsp;&nbsp;
                     <input type="checkbox" name="cource" value="#">GO&nbsp;&nbsp;
                     <input type="checkbox" name="cource" value="#">Kotlin&nbsp;&nbsp;
                     <input type="checkbox" name="cource" value="#">Git&nbsp;&nbsp;
@@ -56,7 +64,8 @@
                     <input type="checkbox" name="cource" value="#">Kotlin&nbsp;&nbsp;
                     <input type="checkbox" name="cource" value="#">Git&nbsp;&nbsp;
                     <input type="checkbox" name="cource" value="#">Ruby&nbsp;&nbsp;
-                    <input type="checkbox" name="cource" value="#">PHP
+                    <input type="checkbox" name="cource" value="#" checked="checked">PHP&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#">DB
                 </form>
                 <p></p>
                 <b>組み込み開発</b><br>
@@ -82,7 +91,7 @@
                 </p>
                 <p>
                     <form>
-                        <input type="submit" value="変更">
+                        <button type="button" onclick="location.href='prof-1.html'">変更</button>
                     </form>
                 </p>
             </div>

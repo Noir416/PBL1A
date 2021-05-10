@@ -11,10 +11,18 @@
 
 <body>
     <div class="grid_container">
-        <header class="grid_header">
+        <header class="grid_header" style="display: flex;justify-content: space-between;">
+            <table>
+                <td><button type="button" onclick="location.href='index.html'" style="padding: 7px;">KDKSS</button></td>
+                <td><button type="button" onclick="location.href='chat_rireki.html'" style="padding: 5.5px;">チャット履歴</button></td>
+            </table>
+
             <div class="title">プロフィール確認画面
             </div>
 
+            <div class="logout">
+                <button type="button" onclick="location.href='login.html'" style="padding: 5.5px;">ログアウト</button>
+            </div>
         </header>
         <main class="grid_main">
             <b>
@@ -54,7 +62,8 @@
                     <input type="checkbox" name="cource" value="#" onclick="return false;">Kotlin&nbsp;&nbsp;
                     <input type="checkbox" name="cource" value="#" onclick="return false;">Git&nbsp;&nbsp;
                     <input type="checkbox" name="cource" value="#" onclick="return false;">Ruby&nbsp;&nbsp;
-                    <input type="checkbox" name="cource" value="#" checked="checked" onclick="return false;">PHP
+                    <input type="checkbox" name="cource" value="#" checked="checked" onclick="return false;">PHP&nbsp;&nbsp;
+                    <input type="checkbox" name="cource" value="#" onclick="return false;">DB
                 </form>
                 <p></p>
                 <b>組み込み開発</b><br>
@@ -81,7 +90,7 @@
 
                 <p>
                     <a href="./prof.html">
-                        <input type="submit" value="変更">
+                        <button type="button" onclick="location.href='prof.html'">プロフィール変更</button>
                     </a>
                 </p>
             </div>

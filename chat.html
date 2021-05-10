@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sns.css">
+    <title>チーム作成画面</title>
+</head>
+
+<body>
+    <div class="grid_container">
+        <header class="grid_header" style="display: flex;justify-content: space-between;">
+            <table>
+                <td><button type="button" onclick="location.href='index.html'" style="padding: 7px;">KDKSS</button></td>
+                <td><button type="button" onclick="location.href='chat_rireki.html'" style="padding: 5.5px;">チャット履歴</button></td>
+            </table>
+
+            <div class="title">チャット画面
+            </div>
+
+            <div class="logout">
+                <button type="button" onclick="location.href='login.html'" style="padding: 5.5px;">ログアウト</button>
+            </div>
+        </header>
+        <main class="grid_main">
+            <div id="your_container">
+
+                <!-- チャットの外側部分① -->
+                <div id="bms_messages_container">
+                    <!-- ヘッダー部分② -->
+                    <div id="bms_chat_header">
+                        <!--ステータス-->
+                        <div id="bms_chat_user_status">
+                            <!--ステータスアイコン-->
+                            <div id="bms_status_icon">●</div>
+                            <!--ユーザー名-->
+                            <div id="bms_chat_user_name">神戸　太郎</div>
+                        </div>
+                    </div>
+
+                    <!-- タイムライン部分③ -->
+                    <div id="bms_messages">
+
+                        <!--メッセージ１（左側）-->
+                        <div class="bms_message bms_right">
+                            <div class="bms_message_box">
+                                <div class="bms_message_content">
+                                    <div class="bms_message_text">チームに参加してほしいです</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bms_clear"></div>
+                        <!--　一行段をつける -->
+                        <!--メッセージ１（左側）-->
+                        <div class="bms_message bms_right">
+                            <div class="bms_message_box">
+                                <div class="bms_message_content">
+                                    <div class="bms_message_text">チームの招待が来ています<br>参加しますか？</div>
+
+                                    <!-- はいかいいえのボタン　遷移先はファイル名が決定してから -->
+                                    &nbsp;&nbsp;<button type="button" onclick="location.href='projectdetail.html'">はい</button> &nbsp;&nbsp;
+                                    <!-- <button type="button" onclick="location.href='login.html'">いいえ</button> -->
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bms_clear"></div>
+                        <!-- 回り込みを解除（スタイルはcssで充てる） -->
+
+                        <!--メッセージ２（右側）-->
+                        <div class="bms_message bms_left">
+                            <div class="bms_message_box">
+                                <div class="bms_message_content">
+                                    <div class="bms_message_text">チームに参加しました</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bms_clear"></div>
+                        <!-- 回り込みを解除（スタイルはcssで充てる） -->
+                    </div>
+
+                    <!-- テキストボックス、送信ボタン④ -->
+                    <div id="bms_send">
+                        <textarea id="bms_send_message"></textarea>
+                        <div id="bms_send_btn">送信</div>
+                    </div>
+                </div>
+            </div>
+
+</html>

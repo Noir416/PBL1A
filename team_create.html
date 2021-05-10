@@ -6,15 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/sns.css">
-    <title>team_create.html</title>
+    <title>チーム作成画面</title>
 </head>
 
 <body>
     <div class="grid_container">
-        <header class="grid_header">
+        <header class="grid_header" style="display: flex;justify-content: space-between;">
+            <table>
+                <td><button type="button" onclick="location.href='index.html'" style="padding: 7px;">KDKSS</button></td>
+                <td><button type="button" onclick="location.href='chat_rireki.html'" style="padding: 5.5px;">チャット履歴</button></td>
+            </table>
+
             <div class="title">チーム作成画面
             </div>
 
+            <div class="logout">
+                <button type="button" onclick="location.href='login.html'" style="padding: 5.5px;">ログアウト</button>
+            </div>
         </header>
         <main class="grid_main">
 
@@ -88,12 +96,12 @@
             <h2>プロジェクト内容</h2>
             <div class="main">
                 <p></p>
-                <textarea name="free" placeholder="プロジェクトの内容や募集したいスキルなどを記入してください">某学校の学生同士をつなげるSNS&#13;同じ学科や違う学科の学生が学んだことの発信や、わからないことの相談、技術者の募集などの交流の場として活用できるサイトを作りたい&#13;サーバーの管理やWebサイト作成のスキルがある人を募集中</textarea><br>
+                <textarea name="free" placeholder="プロジェクトの内容や募集したいスキルなどを記入してください">某学校の学生同士をつなげるSNS&#13;同じ学科や違う学科の学生が学んだことの発信や、わからないことの相談、技術者の募集などの交流の場として活用できるサイトを作りたい&#13;サーバーの管理やWebサイト作成のスキルがある人を募集中&#13;連絡は神戸電子の個人チャットまでお願いします</textarea>
             </div>
 
             <p>
                 <form style="text-align: center;">
-                    <button type="button" onclick="location.href='projectdetail.html'">決定</button>
+                    <button type="button" onclick="location.href='projectdetail.html'" style="padding: 5.5px;">決定</button>
                 </form>
             </p>
         </main>
