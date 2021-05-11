@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/sns.css" />
+    <title>report_create.html</title>
+</head>
+
+<body>
+    <div class="grid_container">
+        <header class="grid_header" style="display: flex;justify-content: space-between;">
+            <table>
+                <td><button type="button" onclick="location.href='index.html'" style="padding: 7px;">KDKSS</button></td>
+                <td><button type="button" onclick="location.href='chat_rireki.html'" style="padding: 5.5px;">チャット履歴</button></td>
+            </table>
+
+            <div class="title">ユーザー管理画面</div>
+            <div class="logout">
+                <button type="button" onclick="location.href='login.html'" style="padding: 5.5px;">ログアウト</button>
+            </div>
+        </header>
+        <main class="grid_main">
+
+            <div class="lists_wrap">
+                <div style="display: flex;justify-content: space-between;">
+                    <b>ユーザー管理</b>
+                </div>
+                <ul class="list" id="list1">
+                    <li><input type="text" value="神戸　電子"><button type="button" class="del pluralBtn">−</button></li>
+                    <li><input type="text" value="神戸　太郎"><button type="button" class="del pluralBtn">−</button></li>
+                    <li><input type="text" value="青木　涼介"><button type="button" class="del pluralBtn">−</button></li>
+                    <li><input type="text" value="井上　魁人"><button type="button" class="del pluralBtn">−</button></li>
+                    <li><input type="text" value="澤田　雄士"><button type="button" class="del pluralBtn">−</button></li>
+                </ul>
+
+                <button type="button" onclick="location.href='team_manage.html'">更新</button>
+        </main>
+        </div>
+</body>
+
+</html>
+<style>
+    input {
+        outline: 0;
+    }
+    
+    .list {
+        padding: 10px;
+    }
+    
+    .list li {
+        margin: 1px;
+        padding: 5px 10px;
+        width: 70%;
+        border: 1px solid #0c5460;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .list li:hover {
+        cursor: move;
+    }
+    
+    .lists_wrap {
+        width: 100%;
+    }
+    
+    #list1 li {
+        background-color: #a2c2e6;
+    }
+    
+    #list1 li input {
+        width: 100%;
+        background-color: #a2c2e6;
+        border: 0;
+        font-size: 16px;
+    }
+    
+    #list2 li input {
+        width: 100%;
+        background-color: #f3981d;
+        border: 0;
+        font-size: 16px;
+    }
+    
+    #list3 li input {
+        width: 100%;
+        background-color: #a4d5bd;
+        border: 0;
+        font-size: 16px;
+    }
+    
+    .sortable-chosen input {
+        background-color: #ec2b2b !important;
+        color: #fff;
+    }
+    
+    .sortable-chosen {
+        background-color: #ec2b2b !important;
+        color: #fff;
+    }
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script>
+    $(document).on("click", ".add", function() {
+        $("#list1").append(
+            "<li><input type='text' placeholder='タスクを入力'><button type='button' class='del pluralBtsn'>−</button></li>"
+        );
+    });
+    $(document).on("click", ".del", function() {
+        var target = $(this).parent();
+        if (target.parent().children().length > 0) {
+            target.remove();
+        }
+    });
+</script>
+<script>
+    $(function() {
+        Sortable.create(list1, {
+            sort: 1,
+            group: {
+                name: "common_lists",
+                pull: true,
+                put: true,
+            },
+            animation: 150,
+            delayOnTouchOnly: false,
+        });
+        Sortable.create(list2, {
+            sort: 1,
+            group: {
+                name: "common_lists",
+                pull: true,
+                put: true,
+            },
+            animation: 150,
+        });
+        Sortable.create(list3, {
+            sort: 1,
+            group: {
+                name: "common_lists",
+                pull: true,
+                put: true,
+            },
+            animation: 150,
+        });
+    });
+</script>
